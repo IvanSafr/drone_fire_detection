@@ -53,4 +53,4 @@ def fire_detect(img_name):
 
     # Любимый ретурнчик
     return img, fire, IS_FIRE
-
+  

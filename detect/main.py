@@ -2,7 +2,7 @@
 from detector import fire_detect
 import cv2
 
-for i in range(0, 8):
+for i in range(0, 10):
     file_name = "img/f"+ str(i) +".jpg"
 
     img, fire_img, is_fire = fire_detect(file_name)
