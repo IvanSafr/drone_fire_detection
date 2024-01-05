@@ -1,8 +1,5 @@
 import cv2, math
 
-def degreesToRadians(degrees):
-  return degrees * math.pi / 180;
-
 
 def calculate_gps_coordinate(initial_latitude, initial_longitude, direction, m):
     # конвертируем градусы в радианы
@@ -12,12 +9,20 @@ def calculate_gps_coordinate(initial_latitude, initial_longitude, direction, m):
     radius = 6378.1 * 1000 # радиус Земли в километрах * метры
 
     # определяем направление
+
+    # Север
     if direction.lower() == 0:
         lat_rad += m / (radius)
+
+    # Юг
     elif direction.lower() == 1:
         lat_rad -= m / (radius)
+
+    # Восток
     elif direction.lower() == 2:
         lon_rad += m / (radius * math.cos(lat_rad))
+
+    # Запад
     elif direction.lower() == 3:
         lon_rad -= m / (radius * math.cos(lat_rad))
     else:

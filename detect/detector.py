@@ -20,8 +20,19 @@ def fire_detect(img_name):
     # hsv_max_smoke = np.array((172, 153, 180), np.uint8)
 
     # Параметры поиска огня
-    hsv_min_fire = np.array((0, 123, 205), np.uint8)
-    hsv_max_fire = np.array((88, 255, 255), np.uint8)
+    # hsv_min_fire = np.array((0, 123, 205), np.uint8)
+    # hsv_max_fire = np.array((88, 255, 255), np.uint8)
+
+    # hsv_min_fire = np.array((68, 0, 217), np.uint8)
+    # hsv_max_fire = np.array((88, 168, 255), np.uint8)
+
+    # 3 версия настройки
+    hsv_min_fire = np.array((130, 0, 239), np.uint8)
+    hsv_max_fire = np.array((255, 255, 255), np.uint8)
+
+
+    blur = 3
+    img_bl = cv2.medianBlur(img, blur)
 
     fire = cv2.inRange(img, hsv_min_fire, hsv_max_fire)
 
